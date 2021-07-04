@@ -1,0 +1,28 @@
+#slider .carousel-item {
+    height: 500px;
+  }
+  
+  .carousel-caption {
+    font-size: 18px;
+  }
+  
+  .carousel-item>img {
+    width: 100%
+  }
+  #footer{
+    margin: auto;
+    background-color: black;
+    
+  }
+  #card-body{
+    background-color:black;
+    color: white;
+   border-color: black;
+   border: none;
+   text-align: center;
+  
+   
+  }
+  .card{
+    border: none;
+  }

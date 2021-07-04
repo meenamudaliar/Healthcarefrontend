@@ -1,0 +1,59 @@
+<h3 style="text-align: center;">Welcome Admin</h3>
+<button type="button" class="btn btn-warning" (click)="logout()" style="float: right;">Logout</button>
+<h2>Medicines List</h2>
+
+<form>
+<div class="col-lg-9 col-sm-12 mt-5">
+    <input type="text"  class="form-control" name="keyword" [(ngModel)]="keyword">
+
+<div class="col-lg-3 col-sm-12 mt-5"> 
+    <button type="button" class="btn btn-primary" (click) = "findByKeyword()">Search</button>
+    <button type="button" class="btn btn-info" (click) = "clear()">Clear</button>
+    </div></div></form>
+
+    <form>   
+        <div class="col-lg-5 col-sm-12 mt-5"> 
+    <div class="container"> 
+        <table> <tr>
+          <td><button type="button" class="btn btn-light" (click) = "sortByNames()">Sort By Name</button></td> 
+       <td> <button type="button" class="btn btn-light" (click) = "sortByPrice()">Sort By Price</button></td>
+    </tr> </table> 
+    </div></div></form>  
+  
+<div class="col-lg-3 col-sm-12 mt-5" >
+<button type="button" class="btn btn-info" (click)="create()">Create Medicine</button>
+</div>
+<table class =" table table-striped">
+<thead>'
+<tr>
+    <th>Name</th>
+    <th>Image</th>
+    <th>Brand</th>
+    <th>Price</th>
+    <th>Quantity</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th style="text-align: center;">Actions</th>
+</tr>
+</thead>
+<tbody>
+
+    <tr *ngFor="let med of medicine">
+       
+    <td>{{ med.name}}</td>
+    <td><img [src]="med.image" height="75" width="100"></td>
+    <td>{{ med.brand}}</td>
+    <td>{{med.price | currency: 'INR'}}</td>
+    <td>{{med.quantity}}</td>
+    <td>{{med.description}}</td>
+    <td><label class="switch">
+        <input type="checkbox"  checked>
+        <span class="slider round"></span>
+      </label></td>
+    <td><button (click) ="updateMedicines(med.id)" class="btn btn-info">Update</button></td>
+    <td><button (click) ="deleteMedicines(med.id)" class="btn btn-danger">Delete</button></td> 
+    <!-- <button (click) = "employeeDetails(employee.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>  -->
+</tr>
+</tbody> 
+
+</table>

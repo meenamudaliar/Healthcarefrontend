@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>User Login</h2>
+  <form #loginform="ngForm" (ngSubmit)="loginUser()">
+    <small class="text-danger">{{msg}}</small>
+<div class="form-group">
+  <label for="username">Username</label>
+  <input type="text" class="form-control" id="username"  name="username" [(ngModel)]="users.username">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password</label>
+    <input type="password" class="form-control" id="password"  name="password" [(ngModel)]="users.password">
+    </div>
+<div class="checkbox">
+  <label><input type="checkbox" name="remember">Remember Me</label>
+</div>
+<button type="submit" class="btn btn-info">Login</button>
+  </form>
+</div>

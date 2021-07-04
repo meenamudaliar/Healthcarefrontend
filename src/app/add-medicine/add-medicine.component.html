@@ -1,0 +1,49 @@
+<h3>Add Medicine</h3>
+<form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+<label>Name</label>
+<input type="text" class="form-control" id="name"
+[(ngModel)]="medicines.name" name="name">
+
+    </div>
+    <div class="form-group">
+        <label>Medicine Image</label>
+     <div class="col-md-6">
+     <input type="text" class="form-control" placeholder="assets/" id="image" name="image" [(ngModel)]="medicines.image">
+        
+            </div>
+                    
+        
+        </div>
+    <div class="form-group">
+        <label>Brand</label>
+        <input type="text" class="form-control" id="brand"
+        [(ngModel)]="medicines.brand" name="brand">
+        
+            </div>
+            
+            <div class="form-group">
+                <label>Price</label>
+                <input type="text" class="form-control" id="price"
+                [(ngModel)]="medicines.price" name="price">
+                
+                    </div>
+                    <div class="form-group">
+                        <label>Quantity</label>
+                        <input type="text" class="form-control" id="quantity"
+                        [(ngModel)]="medicines.quantity" name="quantity">
+                        
+                            </div>
+             <div class="form-group">
+             <label>Description</label>
+            <input type="text" class="form-control" id="description"
+             [(ngModel)]="medicines.description" name="description">
+              </div>
+              <div class="form-group">
+                <label>Status</label>
+                <input type="text" class="form-control" id="status"
+                [(ngModel)]="medicines.status" name="status">
+                
+                    </div>
+                    <button class="btn btn-success" type="submit">Add Medicine</button>
+</form>

@@ -1,0 +1,54 @@
+
+<button type="button" class="btn btn-warning" (click)="logout()" style="float: right;">Logout</button>
+<div class="ml-auto" style="float:right">
+    <app-cart-status></app-cart-status>
+  </div>
+<h2>Medicines List</h2>
+
+<form>
+<div class="col-lg-9 col-sm-12 mt-5">
+    <input type="text"  class="form-control" name="keyword" [(ngModel)]="keyword">
+
+<div class="col-lg-3 col-sm-12 mt-5"> 
+    <button type="button" class="btn btn-primary" (click) = "findByKeyword()">Search</button>
+    <button type="button" class="btn btn-info" (click) = "clear()">Clear</button>
+    </div></div></form>
+
+    <form>   
+        <div class="col-lg-5 col-sm-12 mt-5"> 
+    <div class="container"> 
+        <table> <tr>
+          <td><button type="button" class="btn btn-light" (click) = "sortByNames()">Sort By Name</button></td> 
+       <td> <button type="button" class="btn btn-light" (click) = "sortByPrice()">Sort By Price</button></td>
+    </tr> </table> 
+    </div></div></form>  
+    <div class="col-lg-12 col-sm-3 mt-5"> 
+<div class="row">
+    
+    <div class="col-lg-9">
+  
+      <div class="row">
+        <!-- client side paging -->
+        <!-- <div class="col-lg-4 col-md-6 mb-4" *ngFor="let book of pageOfItems"> -->
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let med of medicine">
+          <div class="card h-100">
+           
+              <img class="card-img-top img-responsive" [src]="med.image" height="250" width="100">
+           
+            <div class="card-body">
+              <h4 class="card-title">
+               {{med.name}}
+              </h4>
+              <h5>{{med.price | currency: 'INR'}}</h5>
+              <p class="card-text text-truncate">{{med.description}}</p>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary float-right" (click)="addToCart(med)">Add Cart</button>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="medicine?.length == 0" class="col-md-12 alert alert-warning mt-1">
+          No medicines found
+        </div>
+      </div>
+  </div></div>
