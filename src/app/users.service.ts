@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UsersService {
-  private baseURL = "http://http://44.193.220.196:8090/api/v1/users";
+  private baseURL = "http://44.193.220.196:8090/api/v1/users";
   router: any;
 
   constructor(private httpClient: HttpClient) { }
@@ -16,6 +16,6 @@ export class UsersService {
     return this.httpClient.post(`${this.baseURL}`,users);
   }
   public loginUserFormRemote(users:Users):Observable<any>{
-    return this.httpClient.post<any>("http://http://44.193.220.196:8090/api/v1/login/",users);
+    return this.httpClient.post<any>("http://44.193.220.196:8090/api/v1/login/",users);
   }
 }
