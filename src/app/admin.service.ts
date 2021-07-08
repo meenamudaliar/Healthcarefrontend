@@ -9,6 +9,6 @@ export class AdminService {
 
   constructor(private httpClient:HttpClient) { }
   public loginAdminFormRemote(admin:Admin):Observable<any>{
-    return this.httpClient.post<any>("http://44.193.220.196:8090/api/v1/admin/login/",admin);
+    return this.httpClient.post<any>("http://localhost:8090/api/v1/admin/login/",admin);
   }
 }
