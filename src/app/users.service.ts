@@ -16,6 +16,6 @@ export class UsersService {
     return this.httpClient.post(`${this.baseURL}`,users);
   }
   public loginUserFormRemote(users:Users):Observable<any>{
-    return this.httpClient.post<any>("http://44.193.220.196:8090/api/v1/login/",users);
+    return this.httpClient.post<any>("http://localhost:8090/api/v1/login/",users);
   }
 }
