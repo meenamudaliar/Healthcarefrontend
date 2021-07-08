@@ -7,7 +7,7 @@ import { Medicines } from './medicines';
   providedIn: 'root'
 })
 export class MedicinesService {
-  private baseURL = "http://localhost:8090/api/v1/medicines";
+  private baseURL = "http://http://44.193.220.196:8090/api/v1/medicines";
   router: any;
 
   constructor(private httpClient: HttpClient) { }
@@ -31,12 +31,12 @@ export class MedicinesService {
     return this.httpClient.get<Medicines>(`${this.baseURL}/search/${keyword}`);
   } */
   public getByKeyword(keyword):Observable<Medicines[]>{
-    return this.httpClient.get<Medicines[]>("http://localhost:8090/api/v1/search/"+keyword);
+    return this.httpClient.get<Medicines[]>("http://http://44.193.220.196:8090/api/v1/search/"+keyword);
   }
   public sortByName():Observable<Medicines[]>{
-    return this.httpClient.get<Medicines[]>("http://localhost:8090/api/v1/sort");
+    return this.httpClient.get<Medicines[]>("http://http://44.193.220.196:8090/api/v1/sort");
   }
   public sortPrice():Observable<Medicines[]>{
-    return this.httpClient.get<Medicines[]>("http://localhost:8090/api/v1/sortprice");
+    return this.httpClient.get<Medicines[]>("http://http://44.193.220.196:8090/api/v1/sortprice");
   }
 }
