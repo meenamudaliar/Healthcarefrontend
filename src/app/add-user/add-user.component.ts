@@ -20,15 +20,20 @@ export class AddUserComponent implements OnInit {
   saveUsers(){
     this.userService.createUsers(this.users).subscribe(data =>{
       console.log(data);
-      
+      this.router.navigate(['/login'])
     
     },
-    error => console.log(error));
+    error => {
+      console.log("error occured");
+      this.msg="Username already exist";
+
+    }
+  )
+    
   }
-  
   onSubmit(){
 console.log(this.users);
-this.router.navigate(['/login'])
+
 this.saveUsers();
   }
 
