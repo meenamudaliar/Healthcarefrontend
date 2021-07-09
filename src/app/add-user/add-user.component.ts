@@ -9,7 +9,7 @@ import { UsersService } from '../users.service';
   styleUrls: ['./add-user.component.css']
 })
 export class AddUserComponent implements OnInit {
-
+msg='';
   users:Users=new Users();
   constructor(private userService: UsersService,private router: Router) { }
   
